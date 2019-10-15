@@ -48,27 +48,16 @@ public class Main {
     }
 
     public static ArrayList<String> fillingOut(ArrayList<String> listA, ArrayList<String> listB) {
+        Collections.reverse(listB);
         ArrayList<String> finalList = new ArrayList<>();
-        String a1 = listA.get(0);
-        String a2 = listA.get(1);
-        String a3 = listA.get(2);
-        String a4 = listA.get(3);
-        String a5 = listA.get(4);
-        String b1 = listB.get(0);
-        String b2 = listB.get(1);
-        String b3 = listB.get(2);
-        String b4 = listB.get(3);
-        String b5 = listB.get(4);
-        finalList.add(a1);
-        finalList.add(b5);
-        finalList.add(a2);
-        finalList.add(b4);
-        finalList.add(a3);
-        finalList.add(b3);
-        finalList.add(a4);
-        finalList.add(b2);
-        finalList.add(a5);
-        finalList.add(b1);
+        Iterator<String> itrA = listA.iterator();
+        Iterator<String> itrB = listB.iterator();
+        while (itrA.hasNext() && itrB.hasNext()){
+            String a = (String) itrA.next();
+            String b = (String) itrB.next();
+            finalList.add(a);
+            finalList.add(b);
+        }
         return finalList;
 
     }
